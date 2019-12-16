@@ -11,7 +11,7 @@ namespace Tests
         [InlineData(7, -5)]
         [InlineData(-1, -1)]
         [InlineData(0, 0)]
-        public void IsInvalidBattleArena(int x, int y)
+        public void ShouldThrowArgumentExceptionWhenCreatingInvalidBattleArena(int x, int y)
         {
             var exception = Assert.Throws<ArgumentException>(() => new BattleArena(x, y));
             Assert.Equal("Coordinates must be positive numbers and different than (0,0)", exception.Message);
@@ -20,7 +20,7 @@ namespace Tests
         [Theory]
         [InlineData(5, 6)]
         [InlineData(6, 5)]
-        public void IsPositionOutsideTheBattleArena(int x, int y)
+        public void ShouldReturnFalseWhenPositionOutsideTheBattleArena(int x, int y)
         {
             var battleArena = new BattleArena(5,5);
             var position = new Position(x, y);
@@ -29,7 +29,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IsRobotAddedToTheListOfRobots()
+        public void ShouldContainRobotWhenRobotAddedToTheListOfRobotsOfTheBattleArena()
         {
             var startingPosition = new Position(1, 2);
             var battleArena = new BattleArena(5, 5);
@@ -40,7 +40,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IsBattleArenaFull()
+        public void ShouldReturnTrueWhenBattleArenaFull()
         {
             var battleArena = new BattleArena(0, 1);
             // ReSharper disable once UnusedVariable

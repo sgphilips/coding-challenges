@@ -2,7 +2,7 @@
 
 namespace Solution
 {
-    public class Position
+    public struct Position
     {
         internal int X { get; set; }
         internal int Y { get; set; }
@@ -26,29 +26,6 @@ namespace Solution
         public override string ToString()
         {
             return $"({X.ToString()},{Y.ToString()})";
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj is Position position)
-            {
-                return Equals(position);
-            }
-
-            return false;
-        }
-
-        protected bool Equals(Position other)
-        {
-            return X == other.X && Y == other.Y;
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return (X * 397) ^ Y;
-            }
         }
     }
 }

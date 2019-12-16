@@ -47,7 +47,7 @@ namespace Tests
             };
 
         [Fact]
-        public void IsInvalidDirection()
+        public void ShouldThrowArgumentExceptionWhenCreatingRobotWithInvalidDirection()
         {
             var battleArena = new BattleArena(5, 5);
             var exception = Assert.Throws<ArgumentException>(() => new Robot(new Position(0, 0), Enum.Parse<Direction>("8"), battleArena));
@@ -55,7 +55,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IsStartingPositionOutsideTheBattleArena()
+        public void ShouldThrowArgumentExceptionWhenStartingPositionOutsideTheBattleArena()
         {
             var battleArena = new BattleArena(5, 5);
             var exception = Assert.Throws<ArgumentException>(() => new Robot(new Position(5, 6), Direction.East, battleArena));
@@ -63,7 +63,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IsStartingPositionTheSameAsOtherRobot()
+        public void ShouldThrowArgumentExceptionWhenStartingPositionTheSameAsOtherRobot()
         {
             var battleArena = new BattleArena(5, 5);
             var startingPosition = new Position(1,2);
@@ -75,7 +75,7 @@ namespace Tests
 
         [Theory]
         [MemberData(nameof(RotateLeftData))]
-        public void IsRotatingLeft(Robot robot, Direction expectedDirection)
+        public void ShouldRotateLeft(Robot robot, Direction expectedDirection)
         {
             robot.RotateLeft();
             Assert.True(robot.Direction == expectedDirection);
@@ -83,7 +83,7 @@ namespace Tests
 
         [Theory]
         [MemberData(nameof(RotateRightData))]
-        public void IsRotatingRight(Robot robot, Direction expectedDirection)
+        public void ShouldRotateRight(Robot robot, Direction expectedDirection)
         {
             robot.RotateRight();
             Assert.True(robot.Direction == expectedDirection);
@@ -91,14 +91,14 @@ namespace Tests
 
         [Theory]
         [MemberData(nameof(MoveData))]
-        public void IsMoving(Robot robot, Position expectedPosition)
+        public void ShouldMove(Robot robot, Position expectedPosition)
         {
             robot.Move();
             Assert.True(robot.Position.Equals(expectedPosition));
         }
 
         [Fact]
-        public void IsInvalidMoveBecauseOtherRobot()
+        public void ShouldThrowInvalidMoveExceptionWhenInvalidMoveBecauseOtherRobot()
         {
             var battleArena = new BattleArena(5, 5);
 
@@ -115,14 +115,14 @@ namespace Tests
 
         [Theory]
         [MemberData(nameof(InvalidMoveData))]
-        public void IsInvalidMoveBecauseOfBattleArena(Robot robot)
+        public void ShouldThrowInvalidMoveExceptionWhenInvalidMoveBecauseOfBattleArena(Robot robot)
         {
             var exception = Assert.Throws<InvalidMoveException>(() => robot.Move());
             Assert.Equal($"Robot {robot.Id} can't move outside the battle arena.", exception.Message);
         }
 
         [Fact]
-        public void IsInvalidToAddRobotToTheBattleArena()
+        public void ShouldThrowArgumentExceptionWhenAddingRobotToTheFullBattleArena()
         {
             var battleArena = new BattleArena(1, 0);
 
@@ -139,7 +139,7 @@ namespace Tests
         }
 
         [Fact]
-        public void IsPositionTheSameAfterInvalidMove()
+        public void ShouldBeTheSamePositionAfterInvalidMove()
         {
             var battleArena = new BattleArena(5, 5);
 
