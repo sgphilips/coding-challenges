@@ -1,0 +1,9 @@
+C:\code\coding-challenges\Supermarket\Supermarket\bin\Debug\netcoreapp2.2\Supermarket.deps.json
+C:\code\coding-challenges\Supermarket\Supermarket\bin\Debug\netcoreapp2.2\Supermarket.dll
+C:\code\coding-challenges\Supermarket\Supermarket\bin\Debug\netcoreapp2.2\Supermarket.pdb
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.csprojAssemblyReference.cache
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.csproj.CoreCompileInputs.cache
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.AssemblyInfoInputs.cache
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.AssemblyInfo.cs
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.dll
+C:\code\coding-challenges\Supermarket\Supermarket\obj\Debug\netcoreapp2.2\Supermarket.pdb
